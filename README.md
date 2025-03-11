@@ -1,2 +1,2 @@
 # sorteador-numeros-logica-programacao-js
- ##Novo projeto, sorteador de números, logica de programação em Javascript.
+<h1 align="center"> Sorteador de números, lógica de programação em Javascript. </h1>
