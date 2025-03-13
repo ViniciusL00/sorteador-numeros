@@ -163,3 +163,34 @@ function reiniciar() {
 ```
 
 <p>Agora, com essa função, o botão de reiniciar limpará todos os campos e retornará o status do botão para desabilitado.</p>
+
+<h2 align="center"> Quinta aula: Proteção na Função de Sortear. </h2>
+
+<p> adicionamos uma validação na função sortear para garantir que o valor do campo "de" não seja maior ou igual ao valor do campo "até". Essa verificação é importante para evitar que o sorteio aconteça com valores inválidos, garantindo uma experiência mais robusta para o usuário. </p>
+
+
+<h3 align="center"> Código Atualizado: </h3>
+
+```
+function sortear() {
+    let quantidade = parseInt(document.getElementById('quantidade').value);
+    let de = parseInt(document.getElementById('de').value);
+    let ate = parseInt(document.getElementById('ate').value);
+
+    // Validação: "de" não pode ser maior ou igual a "ate"
+    if (de >= ate) {
+        alert(`O valor no campo "De" (${de}) deve ser menor que o valor no campo "Até" (${ate}). Por favor, verifique!`);
+        return;
+    }
+}
+```
+
+<h3 align="center"> Explicação </h3>
+
+<p>
+
+1. Objetivo: Garantir que o valor digitado no campo "de" seja sempre menor que o valor no campo "até".
+
+2. Como funciona: A função sortear verifica, logo após a captura dos valores, se o campo "de" é maior ou igual ao campo "até". Se a condição for verdadeira, um alerta é exibido, avisando o usuário sobre o erro e solicitando que ele corrija os valores.
+
+Essa proteção evita erros no sorteio e melhora a usabilidade da aplicação.</p>
