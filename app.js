@@ -8,6 +8,11 @@ function sortear(){
         return;
       }
 
+      if (quantidade > (ate - de + 1)) {
+        alert(`O campo ${quantidade} deve ser menor ou igual ao campo ${de} até o campo ${ate}. Verifique`);
+        return;
+    }
+
 let sorteados = [];
 let numero;
 

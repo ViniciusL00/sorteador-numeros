@@ -194,3 +194,32 @@ function sortear() {
 2. Como funciona: A função sortear verifica, logo após a captura dos valores, se o campo "de" é maior ou igual ao campo "até". Se a condição for verdadeira, um alerta é exibido, avisando o usuário sobre o erro e solicitando que ele corrija os valores.
 
 Essa proteção evita erros no sorteio e melhora a usabilidade da aplicação.</p>
+
+<h2 align="center"> Sexta aula: Proteção no campo quantidade. </h2>
+
+<p> vamos implementar uma validação no campo de quantidade, garantindo que seu valor não seja maior que o intervalo definido pelos campos "De" e "Até". Isso é importante para evitar situações em que o valor de quantidade exceda o intervalo permitido, o que poderia gerar um looping infinito ou comportamentos inesperados. </p>
+
+<p> Objetivo: A principal finalidade dessa proteção é garantir que o valor inserido no campo quantidade esteja dentro do intervalo definido pelos campos de e até. Caso contrário, o sistema deve exibir uma mensagem de erro e impedir o processamento. </p>
+
+<h3 align="center"> Implementando a proteção </h3>
+
+<p> Aqui está o código que adiciona essa proteção: </p>
+
+```
+if (quantidade > (ate - de + 1)) {
+    alert(`O campo ${quantidade} deve ser menor ou igual ao intervalo entre ${de} e ${ate}. Verifique!`);
+    return;
+}
+```
+
+<h4 align="center"> Explicação do Código. </h4>
+
+<p>
+
+1. O cálculo ate - de + 1 determina o número de itens no intervalo entre de e ate, inclusive.
+
+2. Se o valor de quantidade for maior do que o intervalo permitido, o código exibe um alerta com uma mensagem de erro informando o usuário sobre a restrição.
+
+3. O return interrompe a execução do código caso a validação não seja atendida, evitando que o processo continue de forma incorreta.
+
+Essa abordagem ajuda a manter o sistema robusto e evita erros no fluxo de dados. </p>
